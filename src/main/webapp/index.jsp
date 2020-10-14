@@ -28,13 +28,14 @@
 
     <script>
 
+        // upon enter this page, get data from backend
         $(document).ready(function () {
             var editor = initeditor();
-	    // get content from sessionStorage
+	        // get content from sessionStorage
             var initcontent = window.sessionStorage.getItem("comment_top");
             // initial page value
             initdata(editor, initcontent);
-            // trigger auto saving to sessionStorage
+            // trigger auto saving to sessionStorage when change occur
             editor.on('change', function (evt) {
                 window.sessionStorage.setItem("comment_top", evt.editor.getData());
             });
@@ -62,7 +63,7 @@
                 ],
 
                 height: 800,  //box height
-                contentsCss: ['https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.10.1/contents.css'],   //有无里面的方格
+                contentsCss: ['https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.10.1/contents.css'],
                 allowedContent: true,
                 disallowedContent: 'img{width,height,float}',
                 extraAllowedContent: 'img[width,height,align]',

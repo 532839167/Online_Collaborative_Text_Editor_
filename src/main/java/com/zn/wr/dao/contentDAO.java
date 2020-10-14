@@ -16,6 +16,7 @@ public class contentDAO {
     // manual saving
     public boolean insert(String content) {
         try {
+            // insert new content to the db
             String sql = " INSERT INTO w_content(content,createtime,updatetime )VALUES (?,now(),now())";
             Object[] params = new Object[]{content};
             jdbcTemplate.update(sql, params);
@@ -30,6 +31,7 @@ public class contentDAO {
     public String search() {
         String content = null;
         try {
+            // get data from db
             String sql = "SELECT content from w_content  ORDER BY updatetime DESC LIMIT 1";
             content = (String) jdbcTemplate.queryForObject(sql, java.lang.String.class);
 
