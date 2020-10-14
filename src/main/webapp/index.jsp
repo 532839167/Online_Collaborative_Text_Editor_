@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CKEditor Classic Editing Sample</title>
+    <title>Online Collaborative Editor</title>
 
     <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
@@ -75,7 +75,7 @@
         };
 
         function initdata(editor, initcontent) {
-            //显示进度条代码结束
+
             var aj = $.ajax({
                 type: "POST",
                 url: "initdata",
